@@ -1,0 +1,61 @@
+---
+    import { css } from "../../styled-system/css";
+    import ListEvents from '../components/header/ListEvents.svelte';
+---
+
+
+<header id="header_box" 
+    class={
+        css({ 
+            display: 'flex', 
+            position: 'relative',
+            width: {
+                xsm: '100%',
+                lg: '80%' 
+            },
+            height: {
+                xsm: '150px',
+                lg: '400px' 
+            },
+        })
+    }
+>
+    <div id="header_bg" 
+        class={
+            css({ 
+                position: 'absolute', 
+                zIndex: 1,
+                backgroundImage: "url('/assets/images/bg-sidebar-mobile.svg')",
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                width: {
+                    xsm: '100%',
+                    lg: '80%' 
+                },
+                height: {
+                    xsm: '150px',
+                    lg: '400px' 
+                },
+            })
+        }
+    ></div>
+    <div id="header_stateForm"
+        class={css({
+            position: 'absolute',
+            zIndex: 2,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: {
+                xsm: '-20px',
+                lg: '100px'
+            }
+        })}
+    >
+
+        <ListEvents client:load />
+
+    </div>
+</header>
