@@ -1,0 +1,31 @@
+---
+
+import '../index.css';
+
+import { css } from '../../styled-system/css';
+import { container } from '../../styled-system/patterns';
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Sequential Form</title>
+	</head>
+	<body class={
+            css({ 
+                display: 'flex', 
+                flexDirection: { xsm: 'column', md: 'row' }, 
+                minHeight: '100%',
+                backgroundColor: 'gray.200'
+            })
+        }
+    >
+
+        <slot class={container({})}/>
+
+	</body>
+</html>
