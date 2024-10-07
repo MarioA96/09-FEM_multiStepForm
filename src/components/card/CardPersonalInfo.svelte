@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { formNumProcess } from '../../stores/form.store';
+
     import { cva, css } from "../../../styled-system/css";
     
     import Card from "../../ui/components/Card.svelte"; 
@@ -6,6 +8,10 @@
     import Card_Description from "../../ui/components/Card_Description.svelte";
     import Card_Body from "../../ui/components/Card_Body.svelte";
     
+
+    $: formNumProcess.set(1);
+
+
     const FormStyles = cva({
         base: {
             display: 'flex',
@@ -16,12 +22,14 @@
                 display: 'flex', 
                 flexDirection: 'column',
                 '& label': {
+                    fontFamily: 'ubuntu_regular',
                     fontSize: '14px',
                     fontWeight: '600',
                     color: 'blue.950',
                     marginBottom: '2px'
                 },
                 '& input': {
+                    fontFamily: 'ubuntu_regular',
                     height: '40px',
                     border: '0.5px solid gray',
                     borderRadius: '5px',
@@ -38,6 +46,7 @@
         <div id="title_personalInfo"
             class={
                 css({
+                    fontFamily: 'ubuntu_bold',
                     fontSize: '1.5rem',
                     fontWeight: 'bold',
                     color: 'hsl(213, 96%, 18%)',
@@ -51,8 +60,9 @@
         <div id="description_personalInfo"
             class={
                 css({
+                    fontFamily: 'ubuntu_regular', 
                     fontSize: '16px',
-                    color: 'gray.500',
+                    color: 'gray.400',
                 })
             }
         >
