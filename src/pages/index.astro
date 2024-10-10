@@ -7,6 +7,7 @@ import MainApp from "../components/MainApp.svelte";
 import FooterStepsLayout from "../components/footer/FooterStepsLayout.svelte";
 import BackStep from "../components/footer/footerStepsButtons/BackStep.svelte";
 import NextStep from "../components/footer/footerStepsButtons/NextStep.svelte";
+import ConfirmStep from "../components/footer/footerStepsButtons/ConfirmStep.svelte";
 
 ---
 
@@ -20,6 +21,7 @@ import NextStep from "../components/footer/footerStepsButtons/NextStep.svelte";
 	<FooterStepsLayout client:load>
 		<BackStep slot="button_back" client:load/>
 		<NextStep slot="button_next" client:load/>
+		<ConfirmStep slot="button_confirm" client:load/>
 	</FooterStepsLayout>
 
 	
