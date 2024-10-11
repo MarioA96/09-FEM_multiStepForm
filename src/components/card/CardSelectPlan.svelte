@@ -43,8 +43,10 @@
         <div id="description_selectPlan"
             class={
                 css({
+                    fontFamily: 'ubuntu_regular',
+                    fontWeight: '600', 
                     fontSize: '16px',
-                    color: 'gray.500',
+                    color: 'gray.400',
                 })
             }
         >

@@ -60,7 +60,8 @@
         <div id="description_personalInfo"
             class={
                 css({
-                    fontFamily: 'ubuntu_regular', 
+                    fontFamily: 'ubuntu_regular',
+                    fontWeight: '600', 
                     fontSize: '16px',
                     color: 'gray.400',
                 })
