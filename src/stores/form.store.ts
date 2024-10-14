@@ -2,6 +2,22 @@ import { atom } from 'nanostores';
 import type { PlanType } from '../interfaces/PlanType.interface';
 
 
+class Formulary {
+    constructor(
+        public personalInfo: PersonalInfo,
+        public plan: Plan
+    ) {}
+}
+
+class PersonalInfo {
+    constructor(
+        public name: string,
+        public email: string,
+        public phone: string
+    ) {}
+}
+
+
 export const formNumProcess = atom(1);
 export const planBilling = atom('monthly');
 
@@ -29,7 +45,19 @@ export const planType = atom<PlanType>({
 });
 
 export const addOns = atom({
-    online: false,
-    largerStorage: false,
-    customProfile: false,
+    online: {
+        isActive: false,
+        priceMonthly: 1.0,
+        priceYearly: 10.0
+    },
+    largerStorage: {
+        isActive: false,
+        priceMonthly: 2.0,
+        priceYearly: 20.0
+    },
+    customProfile: {
+        isActive: false,
+        priceMonthly: 2.0,
+        priceYearly: 20.0
+    },
 });
