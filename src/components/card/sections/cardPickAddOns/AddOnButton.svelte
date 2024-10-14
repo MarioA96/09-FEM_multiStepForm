@@ -41,7 +41,8 @@
             id: 'largerStorage', 
             title: 'Larger storage', 
             desc: 'Extra 1TB of cloud save',
-            price: 2 },
+            price: 2 
+        },
         { 
             id: 'customProfile', 
             title: 'Customizable profile', 
@@ -56,12 +57,12 @@
     <button id={`box_pickAddOn_type_${button.id}`} 
         class={ cx( grid({ columns: 12 }), buttonAddOnStyles({}) )}
         on:click={ () => handleSelectAddOn(button.id) }
-        style:border={ $addOns[button.id] ? '1px solid blue' : `1px solid hsl(229, 24%, 87%)` }
-        style:background={ $addOns[button.id] ? 'hsl(229, 100%, 96%)' : 'hsl(0, 0%, 100%)' }
+        style:border={ $addOns[button.id].isActive ? '1px solid blue' : `1px solid hsl(229, 24%, 87%)` }
+        style:background={ $addOns[button.id].isActive ? 'hsl(229, 100%, 96%)' : 'hsl(0, 0%, 100%)' }
     >
         <div id={`box_checkbox_addOn_${button.id}`} class={ gridItem({ colSpan: 2 }) }>
             <input type="checkbox" name={button.id} id={`checkBox_${button.id}`} 
-                bind:checked={$addOns[button.id]}
+                bind:checked={$addOns[button.id].isActive}
             >
         </div>
         <div id={`box_info_plan_${button.id}`} class={ cx( gridItem({ colSpan: 8 }) ) }>
