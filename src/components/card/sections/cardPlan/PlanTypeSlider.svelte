@@ -2,7 +2,6 @@
 
     import { planBilling } from '../../../../stores/form.store';
 
-    import { cx, css } from "../../../../../styled-system/css";
     import { planSliderStyles } from '../../../../styles/cardPlan/planSliderStyles';
 
 
@@ -18,7 +17,7 @@
 >
     <span id="switch_plan_monthly">Monthly</span>
         <label class="switch">
-            <input type="checkbox" on:change={handleSelectBilling}>
+            <input type="checkbox" on:change={handleSelectBilling} checked={$planBilling === 'monthly' ? false : true}>
             <span class="slider"></span>
         </label>
     <span id="switch_plan_yearly">Yearly</span>
