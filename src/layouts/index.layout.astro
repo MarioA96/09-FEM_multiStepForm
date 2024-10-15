@@ -7,11 +7,11 @@ import { container } from '../../styled-system/patterns';
 
 ---
 
-<html lang="en">
+<html lang="en" class={css({height: '100%'})}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="generator" content={Astro.generator} />
 		<title>Sequential Form</title>
 	</head>
@@ -19,13 +19,23 @@ import { container } from '../../styled-system/patterns';
             css({ 
                 display: 'flex', 
                 flexDirection: { xsm: 'column', md: 'row' }, 
-                minHeight: '100%',
-                backgroundColor: 'gray.200'
+                minHeight: { xsm: '100%', lg: '100%' },
+                backgroundColor: 'gray.200',
+                justifyContent: 'center',
+                alignContent: 'center',
+                alignItems: 'center',
             })
         }
     >
 
-        <slot class={container({})}/>
+        <slot class={
+                css({
+                    display: { 
+                        lg: 'flex' 
+                    }  
+                })
+            }
+        />
 
 	</body>
 </html>
