@@ -181,11 +181,11 @@
 
             <!--
                 TODO: agregar la validacion de campos del formulario de la primera card al opimir NextStep
-                TODO: Arreglar el bug del switch que cuando uno pasa de una card a otra se pierde el estado
+                //: Arreglar el bug del switch que cuando uno pasa de una card a otra se pierde el estado
                 TODO: Hacer que cuando se oprima el boton en la segunda card esta permanezca en el mismo estado
                 TODO: Hacer que los datos de la segunda card permanezca de acuerdo al estado del store
                 //: Hacer que la 4ta card se muestre de acuerdo a los datos del store
-                TODO: Hacer la version desktop de la aplicacion completa
+                //: Hacer la version desktop de la aplicacion completa
                 TODO: Las validaciones de cada carta deben ocurrir cada que se de en Next
                 TODO: Al oprimir el boton de confirmar de la 4ta card se debe de mostrar un mensaje de confirmacion
                 TODO: Simplificar la 4ta card mediante custom hooks

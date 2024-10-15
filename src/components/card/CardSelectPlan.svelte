@@ -1,8 +1,7 @@
 <script lang="ts">
     import { formNumProcess } from '../../stores/form.store';
 
-    import { cx, cva, css } from "../../../styled-system/css";
-    import { grid, gridItem } from "../../../styled-system/patterns";
+    import { cva, css } from "../../../styled-system/css";
     
     import Card from "../../ui/components/Card.svelte"; 
     import Card_Header from "../../ui/components/Card_Header.svelte";
