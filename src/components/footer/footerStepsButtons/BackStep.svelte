@@ -4,6 +4,12 @@
     import { gridItem } from "../../../../styled-system/patterns";
     import { cva } from "../../../../styled-system/css";
 
+
+    const handleBackStep = () => {
+        formNumProcess.set($formNumProcess - 1);
+    }
+
+
     const ButtonStyles = cva({
         base: {
             width: '100%', 
@@ -24,7 +30,10 @@
 
 {#if $formNumProcess >= 2}
     <div class={ gridItem({ colStart: 2, colEnd: 5 }) }>
-        <button id="button_back" class={ButtonStyles({})} >
+        <button id="button_back" 
+            on:click={handleBackStep}
+            class={ButtonStyles({})} 
+        >
             Go Back
         </button>
     </div>
