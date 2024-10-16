@@ -24,7 +24,10 @@ export const useCardAddOns = () => {
             case 'online':
                 addOns.set({
                     ...addOns.get(),
-                    online: !statesButton.get().online ? true : false,
+                    online: {
+                        ...addOns.get().online,
+                        isActive: !statesButton.get().online ? true : false
+                    },
                 });
                 statesButton.get().online = !statesButton.get().online ? true : false;
                 
@@ -35,7 +38,10 @@ export const useCardAddOns = () => {
             case 'largerStorage':
                 addOns.set({
                     ...addOns.get(),
-                    largerStorage: !statesButton.get().largerStorage ? true : false,
+                    largerStorage: {
+                        ...addOns.get().largerStorage,
+                        isActive: !statesButton.get().largerStorage ? true : false
+                    },
                 });
                 statesButton.get().largerStorage = !statesButton.get().largerStorage ? true : false;
 
@@ -46,7 +52,10 @@ export const useCardAddOns = () => {
             case 'customProfile':
                 addOns.set({
                     ...addOns.get(),
-                    customProfile: !statesButton.get().customProfile ? true : false,
+                    customProfile: {
+                        ...addOns.get().customProfile,
+                        isActive: !statesButton.get().customProfile ? true : false
+                    },
                 });
                 statesButton.get().customProfile = !statesButton.get().customProfile ? true : false;
 
