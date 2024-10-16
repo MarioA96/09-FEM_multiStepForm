@@ -11,12 +11,17 @@
     
     import type { Plan } from "../../interfaces/PlanType.interface";
 
+    import FooterStepsLayout from '../footer/FooterStepsLayout.svelte';
+    import BackStep from '../footer/footerStepsButtons/BackStep.svelte';
+    import NextStep from '../footer/footerStepsButtons/NextStep.svelte';
+    import ConfirmStep from '../footer/footerStepsButtons/ConfirmStep.svelte';
+
     $: formNumProcess.set(4);
 
     
-    const planTypeData: string = planType.get().Arcade.active ? 'Arcade' : planType.get().Advanced.active ? 'Advanced' : 'Pro';
+    const planTypeData: string = planType.get().Arcade.isActive ? 'Arcade' : planType.get().Advanced.isActive ? 'Advanced' : 'Pro';
     
-    const plan: Plan = planType.get().Arcade.active ? planType.get().Arcade : planType.get().Advanced.active ? planType.get().Advanced : planType.get().Pro;
+    const plan: Plan = planType.get().Arcade.isActive ? planType.get().Arcade : planType.get().Advanced.isActive ? planType.get().Advanced : planType.get().Pro;
     const planPriceByBilling: number = planBilling.get() === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice;
     
     const planBillingCase = planBilling.get() === 'monthly' ? 'mo' : 'yr';
@@ -131,7 +136,6 @@
             on:submit={ (e) => e.preventDefault() }
         >
 
-            <!-- Tiene que ser obligatorio elegir el plan, el billing si es default monthly -->
             <div id="box_labelCard_plan" class={ cx(grid({ columns: 12 }), labelCard({}) )}>
 
                 <div id="box_labelCard_info_plan" class={ cx( grid({}), gridItem({ colSpan: 9 }) )}>
@@ -162,8 +166,7 @@
                     </div>
                 {/if}
             {/each}
-            <!-- Esto se debe de generar de forma dinamica para cada estado donde este un servicio -->
-
+            
             <hr class={css({ border: 'none', height: '20px' })}>
 
             <div id="box_labelCard_service_total" class={ cx(grid({ columns: 12 }), labelCard({}) )}>
@@ -179,20 +182,15 @@
 
             </div>
 
-            <!--
-                TODO: agregar la validacion de campos del formulario de la primera card al opimir NextStep
-                //: Arreglar el bug del switch que cuando uno pasa de una card a otra se pierde el estado
-                TODO: Hacer que cuando se oprima el boton en la segunda card esta permanezca en el mismo estado
-                TODO: Hacer que los datos de la segunda card permanezca de acuerdo al estado del store
-                //: Hacer que la 4ta card se muestre de acuerdo a los datos del store
-                //: Hacer la version desktop de la aplicacion completa
-                TODO: Las validaciones de cada carta deben ocurrir cada que se de en Next
-                TODO: Al oprimir el boton de confirmar de la 4ta card se debe de mostrar un mensaje de confirmacion
-                TODO: Simplificar la 4ta card mediante custom hooks
-            -->
 
         </form>
 
     </Card_Body>
+
+    <FooterStepsLayout>
+        <BackStep slot="button_back"/>
+        <NextStep slot="button_next"/>
+        <ConfirmStep slot="button_confirm"/>
+    </FooterStepsLayout>
 
 </Card>
