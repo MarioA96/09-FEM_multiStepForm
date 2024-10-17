@@ -2,20 +2,17 @@ import { atom } from 'nanostores';
 import type { PlanType } from '../interfaces/PlanType.interface';
 
 
-class Formulary {
+class PersonalInfo {
     constructor(
-        public personalInfo: PersonalInfo,
-        public plan: Plan
+        public username: string,
+        public email: string,
+        public phoneNumber: string
     ) {}
 }
 
-class PersonalInfo {
-    constructor(
-        public name: string,
-        public email: string,
-        public phone: string
-    ) {}
-}
+let personalInfo = new PersonalInfo('', '', '');
+
+export const formPersonalInfo = atom(personalInfo);
 
 
 export const formNumProcess = atom(1);
@@ -23,22 +20,22 @@ export const planBilling = atom('monthly');
 
 export const planType = atom<PlanType>({
     Default: {
-        active: true,
+        isActive: true,
         monthlyPrice: 0.0,
         yearlyPrice: 0.0,
     },
     Arcade: {
-        active: false,
+        isActive: false,
         monthlyPrice: 9.0,
         yearlyPrice: 90.0,
     },
     Advanced: {
-        active: false,
+        isActive: false,
         monthlyPrice: 12.0,
         yearlyPrice: 120.0,
     },
     Pro: {
-        active: false,
+        isActive: false,
         monthlyPrice: 15.0,
         yearlyPrice: 150.0,
     },
