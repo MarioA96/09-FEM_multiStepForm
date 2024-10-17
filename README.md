@@ -52,4 +52,4 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Website - WIP-Website
 - Frontend Mentor - [@MarioA96](https://www.frontendmentor.io/profile/MarioA96)
-- Twitter - [@yourusername](https://x.com/FewLines500)
+- Twitter - [@FewLines500](https://x.com/FewLines500)
