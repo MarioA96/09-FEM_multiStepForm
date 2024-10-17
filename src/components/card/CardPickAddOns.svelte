@@ -9,13 +9,20 @@
 
     import AddOnButton from "./sections/cardPickAddOns/AddOnButton.svelte";
 
-    import { cva, cx, css } from "../../../styled-system/css";
-    import { grid, gridItem } from "../../../styled-system/patterns";
+    import { css } from "../../../styled-system/css";
+
+    import FooterStepsLayout from '../footer/FooterStepsLayout.svelte';
+    import BackStep from '../footer/footerStepsButtons/BackStep.svelte';
+    import NextStep from '../footer/footerStepsButtons/NextStep.svelte';
+    import ConfirmStep from '../footer/footerStepsButtons/ConfirmStep.svelte';
 
 
     $: formNumProcess.set(3);
 
-
+    const handleSubmit = (e: Event) => {
+        e.preventDefault();
+        formNumProcess.set(4);
+    }
 </script>
 
 
@@ -58,7 +65,7 @@
                     height: 'fit-content'
                 })
             }
-            on:submit={ (e) => e.preventDefault() }
+            on:submit={ (e) => handleSubmit(e) }
         >
             <div id="box_pickAddOn">
                 <AddOnButton />
@@ -66,4 +73,10 @@
         </form>
 
     </Card_Body>
+
+    <FooterStepsLayout>
+        <BackStep slot="button_back"/>
+        <NextStep slot="button_next" idForm="form_pickAddOns"/>
+        <ConfirmStep slot="button_confirm"/>
+    </FooterStepsLayout>
 </Card>
