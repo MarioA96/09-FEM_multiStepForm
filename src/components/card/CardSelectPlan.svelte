@@ -11,6 +11,11 @@
     import PlanTypesSection from "./sections/cardPlan/PlanTypesSection.svelte";
     import PlanTypeSlider from "./sections/cardPlan/PlanTypeSlider.svelte";
 
+    import FooterStepsLayout from '../footer/FooterStepsLayout.svelte';
+    import BackStep from '../footer/footerStepsButtons/BackStep.svelte';
+    import NextStep from '../footer/footerStepsButtons/NextStep.svelte';
+    import ConfirmStep from '../footer/footerStepsButtons/ConfirmStep.svelte';
+
     $: formNumProcess.set(2);
     
     const FormStyles = cva({
@@ -21,6 +26,11 @@
             height: 'fit-content',
         }
     });
+
+    const handleSubmit = (e: Event) => {
+        e.preventDefault();
+        formNumProcess.set(3);
+    }
 
 </script>
 
@@ -54,7 +64,9 @@
     </Card_Description>
     <Card_Body>
         
-        <form id="form_selectPlan" class={FormStyles({})} on:submit={ (e) => e.preventDefault() }>
+        <form id="form_selectPlan" class={FormStyles({})}
+            on:submit={(e) => handleSubmit(e)}
+        >
 
             <PlanTypesSection />
 
@@ -63,4 +75,10 @@
         </form>
 
     </Card_Body>
+
+    <FooterStepsLayout>
+        <BackStep slot="button_back"/>
+        <NextStep slot="button_next" idForm="form_selectPlan"/>
+        <ConfirmStep slot="button_confirm"/>
+    </FooterStepsLayout>
 </Card>
