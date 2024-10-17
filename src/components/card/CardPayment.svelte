@@ -90,6 +90,10 @@
         return total;
     }
 
+    const handleSubmit = (e: Event) => {
+        e.preventDefault();
+    }
+
 </script>
 
 <Card>
@@ -133,7 +137,7 @@
                     height: 'fit-content'
                 })
             }
-            on:submit={ (e) => e.preventDefault() }
+            on:submit={ (e) => handleSubmit(e) }
         >
 
             <div id="box_labelCard_plan" class={ cx(grid({ columns: 12 }), labelCard({}) )}>
@@ -189,7 +193,7 @@
 
     <FooterStepsLayout>
         <BackStep slot="button_back"/>
-        <NextStep slot="button_next"/>
+        <NextStep slot="button_next" idForm="form_payment"/>
         <ConfirmStep slot="button_confirm"/>
     </FooterStepsLayout>
 
