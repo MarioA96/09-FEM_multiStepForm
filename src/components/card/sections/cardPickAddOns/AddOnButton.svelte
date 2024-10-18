@@ -50,19 +50,31 @@
             price: 2 
         }
     ];
+
 </script>
 
 {#each initialButtonsAvailable as button, index}    
 
+    <!-- 
+        Comentario importante sobre el comportamiento del formulario,
+        si no especificamos el  type del button, por default es de tipo submit,
+        lo cual debemos de controlarlo con preventDefault() en el evento de click.
+        pero esto impide la activacion de los checkbox, por lo que ese mejor indicar al
+        button que sea de tipo button. para que se haga el bind al checkbox y no se envie el formulario.
+        Y dado a que este se encontraba anidado dentro de button, entonces, si button e.preventDefault(), este
+        anulaba la funcionalidad del checkbox.
+        Por eso es importante que se controle en el nivel superior, el form y no desde el button
+    -->
     <button id={`box_pickAddOn_type_${button.id}`} 
+        type="button"
         class={ cx( grid({ columns: 12 }), buttonAddOnStyles({}) )}
-        on:click={ () => handleSelectAddOn(button.id) }
         style:border={ $addOns[button.id].isActive ? '1px solid blue' : `1px solid hsl(229, 24%, 87%)` }
         style:background={ $addOns[button.id].isActive ? 'hsl(229, 100%, 96%)' : 'hsl(0, 0%, 100%)' }
+        on:click={ () => handleSelectAddOn(button.id) }
     >
         <div id={`box_checkbox_addOn_${button.id}`} class={ gridItem({ colSpan: 2 }) }>
-            <input type="checkbox" name={button.id} id={`checkBox_${button.id}`} 
-                bind:checked={$addOns[button.id].isActive}
+            <input type="checkbox" id={`checkBox_${button.id}`} 
+                bind:checked={ $addOns[`${button.id}`].isActive }
             >
         </div>
         <div id={`box_info_plan_${button.id}`} class={ cx( gridItem({ colSpan: 8 }) ) }>
