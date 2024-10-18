@@ -77,6 +77,5 @@
     <FooterStepsLayout>
         <BackStep slot="button_back"/>
         <NextStep slot="button_next" idForm="form_pickAddOns"/>
-        <ConfirmStep slot="button_confirm"/>
     </FooterStepsLayout>
 </Card>
