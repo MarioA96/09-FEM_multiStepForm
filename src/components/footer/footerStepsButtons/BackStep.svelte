@@ -28,7 +28,7 @@
     });
 </script>
 
-{#if $formNumProcess >= 2}
+{#if $formNumProcess >= 2 && $formNumProcess < 5}
     <div class={ gridItem({ colStart: 2, colEnd: 5 }) }>
         <button id="button_back" 
             on:click={handleBackStep}
