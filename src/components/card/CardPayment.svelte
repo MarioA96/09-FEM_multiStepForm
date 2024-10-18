@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { formNumProcess, planBilling, planType, addOns } from "../../stores/form.store";
+    import { formNumProcess, planBilling, planType, addOns, formPersonalInfoIsValid } from "../../stores/form.store";
     
     import Card from "../../ui/components/Card.svelte"; 
     import Card_Header from "../../ui/components/Card_Header.svelte";
@@ -92,6 +92,12 @@
 
     const handleSubmit = (e: Event) => {
         e.preventDefault();
+        if($formPersonalInfoIsValid){
+            formNumProcess.set(5);
+        }
+        else {
+            alert('Please fill out the personal information form! (Step 1)');
+        }
     }
 
 </script>
@@ -144,7 +150,11 @@
 
                 <div id="box_labelCard_info_plan" class={ cx( grid({}), gridItem({ colSpan: 9 }) )}>
                     <span class={ css({ fontFamily: 'ubuntu_bold', fontWeight: '600', color: 'blue.800', }) }>{planTypeData} ({$planBilling.charAt(0).toUpperCase()+$planBilling.slice(1)})</span>
-                    <a href="./" class={css({ width: 'fit-content', textDecoration:'underline', fontWeight: '500', color: 'gray.400', marginTop: '-15px' })}>Change</a>
+                    <button class={css({ width: 'fit-content', textDecoration:'underline', fontWeight: '500', color: 'gray.400', marginTop: '-15px', cursor: 'pointer' })}
+                        on:click={() => formNumProcess.set(2)}
+                    >
+                        Change
+                    </button>
                 </div>
                 <div id="box_labelCard_price_plan" class={ cx( gridItem({ colSpan: 3 }) )}>
                     ${ planPriceByBilling }/{ planBillingCase }
@@ -164,7 +174,7 @@
                             </span>
                         </div>
                         <div id="box_labelCard_price_Arcade" class={ cx( gridItem({ colSpan: 3 }) )}>
-                            ${ $planBilling === 'monthly' ? $addOns[addOn.id].priceMonthly : $addOns[addOn.id].priceYearly  }/{ planBillingCase }
+                            ${ $planBilling === 'monthly' ? $addOns[`${addOn.id}`].priceMonthly : $addOns[`${addOn.id}`].priceYearly  }/{ planBillingCase }
                         </div>
 
                     </div>
@@ -193,8 +203,7 @@
 
     <FooterStepsLayout>
         <BackStep slot="button_back"/>
-        <NextStep slot="button_next" idForm="form_payment"/>
-        <ConfirmStep slot="button_confirm"/>
+        <ConfirmStep slot="button_confirm" idForm="form_payment"/>
     </FooterStepsLayout>
 
 </Card>
