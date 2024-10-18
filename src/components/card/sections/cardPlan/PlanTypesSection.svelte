@@ -10,38 +10,33 @@
     
     const handleSelectPlan = (planName: keyof PlanType) => {
 
-        console.log(planName);
-
         switch (planName) {
             case 'Arcade':
                 planType.set({ 
-                    Arcade: { ...planType.get().Arcade, active: true },
+                    Arcade: { ...planType.get().Arcade, isActive: true },
 
-                    Advanced: { ...planType.get().Advanced, active: false },
-                    Pro: { ...planType.get().Pro, active: false },
-                    Default: { ...planType.get().Default, active: false }
+                    Advanced: { ...planType.get().Advanced, isActive: false },
+                    Pro: { ...planType.get().Pro, isActive: false },
+                    Default: { ...planType.get().Default, isActive: false }
                 });
-                console.log(planType.get());
                 break;
             case 'Advanced':
                 planType.set({ 
-                    Advanced: { ...planType.get().Advanced, active: true },
+                    Advanced: { ...planType.get().Advanced, isActive: true },
 
-                    Arcade: { ...planType.get().Arcade, active: false },
-                    Pro: { ...planType.get().Pro, active: false },
-                    Default: { ...planType.get().Default, active: false }
+                    Arcade: { ...planType.get().Arcade, isActive: false },
+                    Pro: { ...planType.get().Pro, isActive: false },
+                    Default: { ...planType.get().Default, isActive: false }
                 });
-                console.log(planType.get());
                 break;
             case 'Pro':
                 planType.set({ 
-                    Pro: { ...planType.get().Pro, active: true },
+                    Pro: { ...planType.get().Pro, isActive: true },
 
-                    Arcade: { ...planType.get().Arcade, active: false },
-                    Advanced: { ...planType.get().Advanced, active: false },
-                    Default: { ...planType.get().Default, active: false }
+                    Arcade: { ...planType.get().Arcade, isActive: false },
+                    Advanced: { ...planType.get().Advanced, isActive: false },
+                    Default: { ...planType.get().Default, isActive: false }
                 });
-                console.log(planType.get());
                 break;
             default:
                 break;
@@ -84,15 +79,19 @@
             yearlyPrice: planType.get().Pro.yearlyPrice,
         }
     ]
+
 </script>
 
 <div id="box_selectPlan_monthly" class={ boxSelectPlanStyles({}) }>
                 
     {#each initialButtonsAvailable as button, index}
 
-        <button id={`box_selectPlan_type_${button.id}`} 
+        <button id={`box_selectPlan_type_${button.id}`}
             class={ grid({ columns: 8 })}
+            type="button"
             on:click={ () => {handleSelectPlan(button.title)} }
+            style:border={ $planType[button.title].isActive ? '1px solid hsl(213, 96%, 18%)' : '1px solid hsl(229, 24%, 87%)' }
+            style:background={ $planType[button.title].isActive ? 'hsl(229, 100%, 96%)' : 'white' }
         >
             <div id={`box_icon_plan_${button.id}`} class={ gridItem({ colSpan: 2 }) }>
                 <img src={`${button.imgSrc}`} alt={`${button.id}-icon`}>
