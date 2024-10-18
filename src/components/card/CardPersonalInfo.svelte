@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { formNumProcess, formPersonalInfo } from '../../stores/form.store';
+    import { formNumProcess, formPersonalInfo, formPersonalInfoIsValid } from '../../stores/form.store';
 
     import { z } from 'astro/zod';
     
@@ -77,11 +77,6 @@
         // const numOfInputs = Object.keys(data).length;
 
         try {
-            let safeResults = formSchema.safeParse({
-                username: data.fpersonalInfo_name,
-                email: data.fpersonalInfo_email,
-                phoneNumber: data.fpersonalInfo_phoneNumber,
-            });
             formSchema.parse({
                 username: data.fpersonalInfo_name,
                 email: data.fpersonalInfo_email,
@@ -93,9 +88,11 @@
                 phoneNumber: data.fpersonalInfo_phoneNumber.toString(),
             });
             
+            formPersonalInfoIsValid.set(true);
             formNumProcess.set(2);
             
         } catch (error) {
+            //Checks if the input is valid after another input is typed
             if ( formSchema.shape.username.safeParse(data.fpersonalInfo_name).success ) {
                 errorMessages.name.invalid.isInvalid = false;
             }
@@ -243,6 +240,5 @@
     <FooterStepsLayout>
         <BackStep slot="button_back"/>
         <NextStep slot="button_next" idForm="form_personalInfo"/>
-        <ConfirmStep slot="button_confirm"/>
     </FooterStepsLayout>
 </Card>
