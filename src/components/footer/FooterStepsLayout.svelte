@@ -10,11 +10,17 @@
             position: 'absolute',
             zIndex: 2,
             height: 'fit-content',
-            width: '100%',
+            width: {
+                xsm: '90%',
+                lg: '100%'
+            },
             marginTop: 'auto',
             marginBottom: '1rem',
             backgroundColor: 'white',
-            bottom: '0px',
+            bottom: {
+                xsm: '-80px',
+                lg: '0px'
+            },
             '& #steps_box': {
                 alignItems: 'center',
                 width: '100%', 
@@ -33,6 +39,7 @@
         
         <slot name="button_back"/>
         <slot name="button_next"/>
+        <slot name="button_confirm"/>
 
     </div>
 </div>
