@@ -3,12 +3,16 @@
 
     import { gridItem } from "../../../../styled-system/patterns";
     import { css } from "../../../../styled-system/css";
+
+    export let idForm: string;
 </script>
 
 
 {#if $formNumProcess == 4}
 <div class={ gridItem({ colStart: 9, colEnd: 12 }) }>
     <button 
+        type="submit"
+        form={idForm}
         class={ 
             css({ 
                 width: '100%', 

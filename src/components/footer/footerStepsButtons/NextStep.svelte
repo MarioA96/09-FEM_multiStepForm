@@ -4,16 +4,20 @@
     import { gridItem } from "../../../../styled-system/patterns";
     import { css } from "../../../../styled-system/css";
 
-    const handleNextStep = () => {
-        formNumProcess.set($formNumProcess + 1);
-    }
+    //const handleNextStep = () => {
+    //    formNumProcess.set($formNumProcess + 1);
+    //}
+
+    export let idForm: string;
 </script>
 
 
 {#if $formNumProcess <= 3}
 <div class={ gridItem({ colStart: 9, colEnd: 12 }) }>
-    <button 
-        on:click={handleNextStep}
+    <input 
+        type="submit"
+        form={idForm}
+        
         class={ 
             css({ 
                 width: '100%', 
@@ -30,8 +34,7 @@
                 }
             }) 
         }
-    >
-        Next Step
-    </button>
+        value="Next Step"
+    />
 </div>
 {/if}
