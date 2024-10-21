@@ -7,19 +7,11 @@ const statesButton = atom({
     customProfile: false,
 });
 
-//const borderOnline = atom('1px solid hsl(229, 24%, 87%)');
-//const backgroundOnline = atom('hsl(0, 0%, 100%)');
-
-//const borderLargerStorage = atom('1px solid hsl(229, 24%, 87%)');
-//const backgroundLargerStorage = atom('hsl(0, 0%, 100%)');
-
-//const borderCustomProfile = atom('1px solid hsl(229, 24%, 87%)');
-//const backgroundCustomProfile = atom('hsl(0, 0%, 100%)');
-
 
 export const useCardAddOns = () => {
     
     const handleSelectAddOn = (addOn: 'online' | 'largerStorage' | 'customProfile'): void => {
+        
         switch (addOn) {
             case 'online':
                 addOns.set({
@@ -44,10 +36,7 @@ export const useCardAddOns = () => {
                     },
                 });
                 statesButton.get().largerStorage = !statesButton.get().largerStorage ? true : false;
-
-                //borderLargerStorage.set(addOns.get().largerStorage ? '1px solid blue' : '1px solid hsl(229, 24%, 87%)');
-                //backgroundLargerStorage.set(addOns.get().largerStorage ? 'hsl(229, 100%, 96%)' : 'hsl(0, 0%, 100%)');
-
+                
                 break;
             case 'customProfile':
                 addOns.set({
@@ -58,9 +47,6 @@ export const useCardAddOns = () => {
                     },
                 });
                 statesButton.get().customProfile = !statesButton.get().customProfile ? true : false;
-
-                //borderCustomProfile.set(addOns.get().customProfile ? '1px solid blue' : '1px solid hsl(229, 24%, 87%)');
-                //backgroundCustomProfile.set(addOns.get().customProfile ? 'hsl(229, 100%, 96%)' : 'hsl(0, 0%, 100%)');
 
                 break;
         
