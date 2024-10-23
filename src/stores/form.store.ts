@@ -3,6 +3,7 @@ import type { PlanType } from '../interfaces/PlanType.interface';
 
 
 class PersonalInfo {
+    static isValid: boolean = false;
     constructor(
         public username: string,
         public email: string,
@@ -11,8 +12,10 @@ class PersonalInfo {
 }
 
 let personalInfo = new PersonalInfo('', '', '');
+let isvalidPersonlaInfoForm = PersonalInfo.isValid;
 
 export const formPersonalInfo = atom(personalInfo);
+export const formPersonalInfoIsValid = atom(isvalidPersonlaInfoForm);
 
 
 export const formNumProcess = atom(1);
