@@ -3,7 +3,10 @@ import { cva } from "../../../styled-system/css";
 export const planSliderStyles = cva({
     base: {
         display: 'flex', 
-        width: '100%', 
+        width: {
+            xsm: '100%',
+            lg: '97%',
+        }, 
         height: '40px', 
         alignItems: 'center', 
         justifyContent: 'center',
