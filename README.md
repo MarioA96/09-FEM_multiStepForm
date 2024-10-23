@@ -65,4 +65,4 @@ Users should be able to:
 -   ❌: Simplificar la 4ta y 5ta card mediante custom hooks.
 -   ❌: Simplificar la logica de las validaciones mediante un hook separado.
 -   ❌: Agregar la validacion al boton de confirmar de la 4ta card, que este PersonalInfo.isValid en true.
--   ✔️: Arreglar bug de los campos de la carta 1 al tener con error un campo, los demas siguen marcados como.
+-   ✔️: Arreglar bug de los campos de la carta 1 al tener con error un campo, los demas siguen como marcados.
