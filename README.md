@@ -20,7 +20,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -31,8 +31,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: WIP
-- Live Site URL: WIP
+- Challenge page: [link](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ)
+- Live Site: [link](https://marioa96.github.io/09-FEM_multiStepForm/)
 
 ## My process
 
@@ -53,3 +53,20 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Website - WIP-Website
 - Frontend Mentor - [@MarioA96](https://www.frontendmentor.io/profile/MarioA96)
 - Twitter - [@FewLines500](https://x.com/FewLines500)
+
+
+## Continued development
+
+### What's next (TODO list):
+
+-   ✔️: Agregar la validacion de campos del formulario de la primera card al opimir NextStep
+-   ✔️: Arreglar el bug del switch que cuando uno pasa de una card a otra se pierde el estado
+-   ✔️: Hacer que cuando se oprima el boton en la segunda card esta permanezca en el mismo estado
+-   ✔️: Hacer que los datos de la segunda card permanezca de acuerdo al estado del store
+-   ✔️: Hacer que la 4ta card se muestre de acuerdo a los datos del store
+-   ✔️: Hacer la version desktop de la aplicacion completa
+-   ❌: Las validaciones de cada carta deben ocurrir cada que se de en Next
+-   ✔️: Al oprimir el boton de confirmar de la 4ta card se debe de mostrar un mensaje de confirmacion
+-   ❌: Simplificar la 4ta card mediante custom hooks
+-   ❌: Agregar la validacion al boton de confirmar de la 4ta card, que este PersonalInfo.isValid en true
+-   ✔️: Arreglar bug de los campos de la carta 1 al tener con error un campo, los demas siguen marcados como
