@@ -4,25 +4,42 @@ import IndexLayout from "../layouts/index.layout.astro"
 
 import Header from "../isles/header.astro";
 import MainApp from "../components/MainApp.svelte";
-import FooterStepsLayout from "../components/footer/FooterStepsLayout.svelte";
-import BackStep from "../components/footer/footerStepsButtons/BackStep.svelte";
-import NextStep from "../components/footer/footerStepsButtons/NextStep.svelte";
-import ConfirmStep from "../components/footer/footerStepsButtons/ConfirmStep.svelte";
 
+import { css } from '../../styled-system/css';
 ---
 
 <IndexLayout>
 
 
-	<Header />
-
-	<MainApp client:load/>
-
-	<FooterStepsLayout client:load>
-		<BackStep slot="button_back" client:load/>
-		<NextStep slot="button_next" client:load/>
-		<ConfirmStep slot="button_confirm" client:load/>
-	</FooterStepsLayout>
+	<div class={
+		css({
+			display: {
+				xsm: 'block',
+				lg: 'flex',
+			},
+			flexDirection: {
+				xsm: 'column',
+				md: 'row',
+			},
+			width: {
+				xsm: '100%',
+				lg: '60%',
+			},
+			height: {
+				xsm: '100%',
+				md: '65%',
+			},
+			bg: {
+				xsm: 'gray.200',
+				lg: 'white',
+			},
+		})
+	}>
+		<Header />
+	
+		<MainApp client:load/>
+		
+	</div>
 
 	
 </IndexLayout>
