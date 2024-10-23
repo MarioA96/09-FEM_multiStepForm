@@ -32,7 +32,7 @@ $: formNumProcess.set(5);
                 })
             }
         >
-            <img src="/assets/images/icon-thank-you.svg" alt="icon-confirmation" 
+            <img src="/09-FEM_multiStepForm/assets/images/icon-thank-you.svg" alt="icon-confirmation" 
                 class={
                     css({
                         width: {
