@@ -1,9 +1,5 @@
 <script lang="ts">
     import { cx, css } from "../../../styled-system/css"; 
-  import BackStep from "../../components/footer/footerStepsButtons/BackStep.svelte";
-  import ConfirmStep from "../../components/footer/footerStepsButtons/ConfirmStep.svelte";
-  import NextStep from "../../components/footer/footerStepsButtons/NextStep.svelte";
-  import FooterStepsLayout from "../../components/footer/FooterStepsLayout.svelte";
 </script>
 
 
@@ -56,12 +52,6 @@
     >
         
         <slot />
-
-        <FooterStepsLayout>
-            <BackStep slot="button_back"/>
-            <NextStep slot="button_next"/>
-            <ConfirmStep slot="button_confirm"/>
-        </FooterStepsLayout>
 
     </div>
 
