@@ -3,21 +3,21 @@
 
 @font-face {
     font-family: 'Ubuntu Bold';
-    src: url('/assets/fonts/Ubuntu-Bold.ttf');
+    src: url('/09-FEM_multiStepForm/assets/fonts/Ubuntu-Bold.ttf');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Ubuntu Medium';
-    src: url('/assets/fonts/Ubuntu-Medium.ttf');
+    src: url('/09-FEM_multiStepForm/assets/fonts/Ubuntu-Medium.ttf');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'Ubuntu-Regular';
-    src: url('/assets/fonts/Ubuntu-Regular.ttf');
+    src: url('/09-FEM_multiStepForm/assets/fonts/Ubuntu-Regular.ttf');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
