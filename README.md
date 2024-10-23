@@ -40,6 +40,7 @@ Users should be able to:
 - [Svelte](https://svelte.dev/docs/introduction) - JS library
 - [Astro](https://docs.astro.build/en/getting-started/) - Web framework
 - [PandaCSS](https://panda-css.com/docs/overview/getting-started) - For styles
+- [Zod](https://zod.dev/) - TS schema validation
 
 
 ## Author
@@ -53,14 +54,15 @@ Users should be able to:
 
 ### What's next (TODO list):
 
--   ✔️: Agregar la validacion de campos del formulario de la primera card al opimir NextStep
--   ✔️: Arreglar el bug del switch que cuando uno pasa de una card a otra se pierde el estado
--   ✔️: Hacer que cuando se oprima el boton en la segunda card esta permanezca en el mismo estado
--   ✔️: Hacer que los datos de la segunda card permanezca de acuerdo al estado del store
--   ✔️: Hacer que la 4ta card se muestre de acuerdo a los datos del store
--   ✔️: Hacer la version desktop de la aplicacion completa
--   ❌: Las validaciones de cada carta deben ocurrir cada que se de en Next
--   ✔️: Al oprimir el boton de confirmar de la 4ta card se debe de mostrar un mensaje de confirmacion
--   ❌: Simplificar la 4ta card mediante custom hooks
--   ❌: Agregar la validacion al boton de confirmar de la 4ta card, que este PersonalInfo.isValid en true
--   ✔️: Arreglar bug de los campos de la carta 1 al tener con error un campo, los demas siguen marcados como
+-   ✔️: Agregar la validacion de campos del formulario de la primera card al opimir NextStep.
+-   ✔️: Arreglar el bug del switch que cuando uno pasa de una card a otra se pierde el estado.
+-   ✔️: Hacer que cuando se oprima el boton en la segunda card esta permanezca en el mismo estado.
+-   ✔️: Hacer que los datos de la segunda card permanezca de acuerdo al estado del store.
+-   ✔️: Hacer que la 4ta card se muestre de acuerdo a los datos del store.
+-   ✔️: Hacer la version desktop de la aplicacion completa.
+-   ✔️: Las validaciones de cada carta deben ocurrir cada que se de en Next
+-   ✔️: Al oprimir el boton de confirmar de la 4ta card se debe de mostrar un mensaje de confirmacion.
+-   ❌: Simplificar la 4ta y 5ta card mediante custom hooks.
+-   ❌: Simplificar la logica de las validaciones mediante un hook separado.
+-   ❌: Agregar la validacion al boton de confirmar de la 4ta card, que este PersonalInfo.isValid en true.
+-   ✔️: Arreglar bug de los campos de la carta 1 al tener con error un campo, los demas siguen marcados como.
